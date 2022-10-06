@@ -11,7 +11,7 @@ name: IBM Cloud Foundry - V2Ray
 
 env:
   IBM_CF_API: https://api.us-south.cf.cloud.ibm.com
-  IBM_CF_APP_MEM: 128M
+  IBM_CF_APP_MEM: 256M
 
 on:
   workflow_dispatch:
@@ -37,7 +37,7 @@ jobs:
 
     - name: Install Cloud Foundry CLI
       run: |
-        curl -fsSL "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=v7&source=github" | tar -zxC /tmp
+        curl -fsSL "https://packages.cloudfoundry.org/stable?release=linux64-binary&version=v8&source=github" | tar -zxC /tmp
         sudo install -m 755 /tmp/cf7 /usr/local/bin/cf
         cf version
 
